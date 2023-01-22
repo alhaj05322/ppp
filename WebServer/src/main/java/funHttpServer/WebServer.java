@@ -247,11 +247,11 @@ class WebServer {
                     // TODO: Parse the JSON returned by your fetch and create an appropriate
                      //response based on what the assignment document asks for
                     JSONObject obj = new JSONObject(json);
-                    JSONArray arr = obj.getJSONArray("repos");
+                    JSONArray arr = obj.getJSONArray("author");
                     for (int i = 0; i < obj.length(); i++) {
-                        System.out.println(arr.getJSONObject(i).getString("fullname"));
+                        System.out.println(arr.getJSONObject(i).getString("login"));
                         System.out.println(arr.getJSONObject(i).getInt("id"));
-                        System.out.println(arr.getJSONObject(i).getString("loginname"));
+                        //System.out.println(arr.getJSONObject(i).getString("loginname"));
                         System.out.println("**************************************");
                     }
 
