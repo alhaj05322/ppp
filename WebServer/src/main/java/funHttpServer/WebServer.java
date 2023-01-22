@@ -47,16 +47,17 @@ class WebServer {
         try {
             server = new ServerSocket(port);
             while (true) {
-                sock = server.accept();
+               
+                out = sock.getOutputStream();
+                in = sock.getInputStream();
+                byte[] response = createResponse(in);
+                out.write(response);
+                 sock = server.accept();
                 System.out.println("This request to compare 2 integr if they are equal"
                         + " host:port/compare?num1=10&num2=10" );
                 
                 System.out.println("This request to get the hash cod for 2 strings"
                         + " host:port/hash?str1=alhaj&str2=Musa" );
-                out = sock.getOutputStream();
-                in = sock.getInputStream();
-                byte[] response = createResponse(in);
-                out.write(response);
                 out.flush();
                 in.close();
                 out.close();
