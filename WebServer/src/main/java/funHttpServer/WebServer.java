@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Map;
+import java.util.*;
 import java.util.LinkedHashMap;
 import java.nio.charset.Charset;
 //import org.json.*;
@@ -291,8 +292,10 @@ class WebServer {
                         query_pairs = splitQuery(request.replace("hash?", ""));
 
                         // extract required fields from parameters
-                        String str1 = query_pairs.get("str1");
-                        String str2 = query_pairs.get("str2");
+                        StringBuilder str1 = new StringBuilder();
+                        str1.append(query_pairs.get("str1"));
+                         StringBuilder str2 = new StringBuilder();
+                        str2.append(query_pairs.get("str2"));
 
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
