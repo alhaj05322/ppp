@@ -22,10 +22,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Map;
-import java.util.*;
 import java.util.LinkedHashMap;
 import java.nio.charset.Charset;
-//import org.json.*;
+import org.json.*;
 
 class WebServer {
 
@@ -246,15 +245,15 @@ class WebServer {
                     builder.append("\n");
                     builder.append("Check the todos mentioned in the Java source file");
                     // TODO: Parse the JSON returned by your fetch and create an appropriate
-                    // response based on what the assignment document asks for
-//                    JSONObject obj = new JSONObject(json);
-//                    JSONArray arr = obj.getJSONArray("repos");
-//                    for (int i = 0; i < obj.length(); i++) {
-//                        System.out.println(arr.getJSONObject(i).getString("fullname"));
-//                        System.out.println(arr.getJSONObject(i).getInt("id"));
-//                        System.out.println(arr.getJSONObject(i).getString("loginname"));
-//                        System.out.println("**************************************");
-//                    }
+                     //response based on what the assignment document asks for
+                    JSONObject obj = new JSONObject(json);
+                    JSONArray arr = obj.getJSONArray("repos");
+                    for (int i = 0; i < obj.length(); i++) {
+                        System.out.println(arr.getJSONObject(i).getString("fullname"));
+                        System.out.println(arr.getJSONObject(i).getInt("id"));
+                        System.out.println(arr.getJSONObject(i).getString("loginname"));
+                        System.out.println("**************************************");
+                    }
 
                 } else if (request.contains("compare?")) {
                     // compare two numbers
