@@ -291,16 +291,16 @@ class WebServer {
                         query_pairs = splitQuery(request.replace("hash?", ""));
 
                         // extract required fields from parameters
-                        Integer num1 = Integer.parseInt(query_pairs.get("num1"));
-                        Integer num2 = Integer.parseInt(query_pairs.get("num2"));
+                        String str1 = query_pairs.get("str1");
+                        String str2 = query_pairs.get("str2");
 
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        builder.append("The hascode for the first number: " + num1.hashCode() + "\n");
+                        builder.append("The hascode for the first number: " + str1.hashCode() + "\n");
 
-                        builder.append("The hascode for the second number: " + num2.hashCode());
+                        builder.append("The hascode for the second number: " + str2.hashCode());
                     } catch (Exception e) {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
