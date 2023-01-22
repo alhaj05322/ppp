@@ -255,9 +255,7 @@ class WebServer {
 //                        System.out.println("**************************************");
 //                    }
 
-                }
-                
-                else if (request.contains("compare?")) {
+                } else if (request.contains("compare?")) {
                     // compare two numbers
                     try {
 
@@ -271,26 +269,20 @@ class WebServer {
                         //compare num1 to num2
                         boolean result = num1.equals(num2);
 
-                        
-
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
                         builder.append("Is num1 = num2?: " + result);
-               
+
                     } catch (Exception e) {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                       
 
                     }
 
-                    
-                }
-                
-                else if (request.contains("hash?")) {
+                } else if (request.contains("hash?")) {
                     //This print hash code for given numbers
                     try {
 
@@ -302,17 +294,13 @@ class WebServer {
                         Integer num1 = Integer.parseInt(query_pairs.get("num1"));
                         Integer num2 = Integer.parseInt(query_pairs.get("num2"));
 
-                        // get hash code
-                        int result1 = num1.hashCode();
-                        int result2 = num2.hashCode();
-
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        builder.append("The hascode for the first number: " + result1);
-                        System.out.println("");
-                        builder.append("The hascode for the second number: " + result2);
+                        builder.append("The hascode for the first number: " + num1.hashCode() + "\n");
+
+                        builder.append("The hascode for the second number: " + num2.hashCode());
                     } catch (Exception e) {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
@@ -323,9 +311,7 @@ class WebServer {
 
                     // TODO: Include error handling here with a correct error code and
                     // a response that makes sense
-                }
-                
-                else {
+                } else {
                     // if the request is not recognized at all
 
                     builder.append("HTTP/1.1 400 Bad Request\n");
