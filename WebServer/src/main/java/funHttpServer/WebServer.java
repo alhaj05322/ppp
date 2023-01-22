@@ -47,21 +47,15 @@ class WebServer {
         try {
             server = new ServerSocket(port);
             while (true) {
-                sock = server.accept();
-               
+                sock = server.accept();               
                 out = sock.getOutputStream();
                 in = sock.getInputStream();
                 byte[] response = createResponse(in);
-                out.write(response);
-                System.out.println("This request to compare 2 integr if they are equal"
-                        + " host:port/compare?num1=10&num2=10" );
-                
-                System.out.println("This request to get the hash cod for 2 strings"
-                        + " host:port/hash?str1=alhaj&str2=Musa" );
+                out.write(response);               
                 out.flush();
                 in.close();
                 out.close();
-                sock.close();
+                //sock.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -116,7 +110,6 @@ class WebServer {
 
                 System.out.println("Received: " + line);
                 
-
                 // find end of header("\n\n")
                 if (line == null || line.equals("")) {
                     done = true;
