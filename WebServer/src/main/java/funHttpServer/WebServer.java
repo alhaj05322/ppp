@@ -109,6 +109,11 @@ class WebServer {
                 String line = in.readLine();
 
                 System.out.println("Received: " + line);
+                System.out.println("This request to compare 2 integr if they are equal"
+                        + " host:port/compare?num1=10&num2=10" );
+                
+                System.out.println("This request to get the hash cod for 2 strings"
+                        + " host:port/hash?str1=alhaj&str2=Musa" );
 
                 // find end of header("\n\n")
                 if (line == null || line.equals("")) {
