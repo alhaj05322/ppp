@@ -210,6 +210,7 @@ class WebServer {
 
                         // do math
                         Integer result = num1 * num2;
+                        
 
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
@@ -217,10 +218,11 @@ class WebServer {
                         builder.append("\n");
                         builder.append("Result is: " + result);
                     } catch (Exception e) {
+                        String err = "400 Bad Request: uesr enter incorrect values";
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        //builder.append("Result is: " + result);
+                        builder.append("Result is: " + err);
 
                     }
 
@@ -279,6 +281,8 @@ class WebServer {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
+                        String err = "400 Bad Request: uesr enter incorrect values";
+                        builder.append("Result is: " + err);
 
                     }
 
@@ -307,7 +311,8 @@ class WebServer {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        //builder.append("Result is: " + result);
+                        String err = "400 Bad Request: uesr enter incorrect values";
+                        builder.append("Result is: " + err);
 
                     }
 
