@@ -301,9 +301,9 @@ class WebServer {
                         builder.append("HTTP/1.1 200 OK\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        builder.append("The hascode for the first number: " + str1.hashCode() + "\n");
+                        builder.append("The hascode for the first String: \n" + str1.hashCode());
 
-                        builder.append("The hascode for the second number: " + str2.hashCode());
+                        builder.append("The hascode for the second String: \n" + str2.hashCode());
                     } catch (Exception e) {
                         builder.append("HTTP/1.1 400 Bad Request\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
