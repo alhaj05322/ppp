@@ -303,14 +303,15 @@ class WebServer {
                         Integer num2 = Integer.parseInt(query_pairs.get("num2"));
 
                         // get hash code
-                        Integer result1 = num1.hashCode();
-                        Integer result2 = num2.hashCode();
+                        int result1 = num1.hashCode();
+                        int result2 = num2.hashCode();
 
                         // Generate response
                         builder.append("HTTP/1.1 200 OK\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
                         builder.append("The hascode for the first number: " + result1);
+                        System.out.println("");
                         builder.append("The hascode for the second number: " + result2);
                     } catch (Exception e) {
                         builder.append("HTTP/1.1 400 Bad Request\n");
