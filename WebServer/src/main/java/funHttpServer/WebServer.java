@@ -47,12 +47,12 @@ class WebServer {
         try {
             server = new ServerSocket(port);
             while (true) {
+                sock = server.accept();
                
                 out = sock.getOutputStream();
                 in = sock.getInputStream();
                 byte[] response = createResponse(in);
                 out.write(response);
-                 sock = server.accept();
                 System.out.println("This request to compare 2 integr if they are equal"
                         + " host:port/compare?num1=10&num2=10" );
                 
