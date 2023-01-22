@@ -55,7 +55,7 @@ class WebServer {
                 out.flush();
                 in.close();
                 out.close();
-                //sock.close();
+                sock.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
