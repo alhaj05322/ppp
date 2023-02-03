@@ -259,12 +259,11 @@ class WebServer {
 
                 } else if (request.contains("compare?")) {
                     // compare two numbers
-                    
+                    try {
 
                         Map<String, String> query_pairs = new LinkedHashMap<String, String>();
                         // extract path parameters
                         query_pairs = splitQuery(request.replace("compare?", ""));
-                        try{
 
                         // extract required fields from parameters
                         Integer num1 = Integer.parseInt(query_pairs.get("num1"));
